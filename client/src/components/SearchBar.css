@@ -1,0 +1,20 @@
+.search-bar-heading {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 10px
+}
+
+.search-bar .subtitle {
+    position: relative;
+    bottom: 10px;
+}
+
+.response-time span {
+    color: #2078C2
+}
+
+.search-input {
+    position: relative;
+    bottom: 8px
+}

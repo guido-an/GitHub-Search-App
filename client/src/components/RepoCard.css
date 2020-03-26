@@ -1,0 +1,38 @@
+.repo-card {
+    border: 2px solid #f7f7f7;
+    border-radius: 4px;
+    padding: 50px;
+    width: 100%
+}
+
+.repo-card .desc {
+    color: #777;
+    margin-bottom: 40px;
+    position: relative;
+    bottom: 5px
+}
+
+.repo-info {
+    height: 160px
+}
+
+.repo-heading {
+    height: 90px
+}
+
+.repo-card:hover {
+    box-shadow: 0 6px 10px rgba(46, 41, 51, 0.08), 0 8px 14px rgba(71, 63, 79, 0.08);
+}
+
+.repo-card a:hover {
+    color: #2078C2;
+}
+
+@media (min-width: 1200px) {
+    .repo-card {
+        margin: 10px 0;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+    }
+}
