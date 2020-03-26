@@ -4,7 +4,6 @@ import { translations } from '../translations/searchBar'
 import { setLanguage } from '../config/setLanguage'
 
 const { title, placeholder, subtitle, responseTime } = setLanguage(translations)
-
 class SearchBar extends React.Component {
     state = {
         term: '',
@@ -13,10 +12,10 @@ class SearchBar extends React.Component {
 
     onInputChange = e => {
         this.setState({ term: e.target.value })
-        if (this.timeout) clearTimeout(this.timeout);
+        if (this.timeout) clearTimeout(this.timeout)
         this.timeout = setTimeout(() => {
           this.props.getSearchTerm(this.state.term)
-        }, 300);
+        }, 300)
     }
     
   render () {

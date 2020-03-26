@@ -1,14 +1,47 @@
 import './RepoPage.css'
 import React from 'react'
 import axios from 'axios'
+import RepoDetails from '../components/RepoDetails'
+import Slider from '../components/Slider'
+
+// import { singleRepoTest } from '../test'
+
+
+
+const hideOnMobile = {
+  display: 'none'
+}
+
+const sliderStyle = function() {
+  if (window.innerWidth < 800) {
+    alert('yes')
+    return hideOnMobile;
+  } else {
+    alert('no')
+  }
+};
+
 
 class RepoPage extends React.Component {
   state = {
     singleRepo: null
   }
+  // state = {
+  //   singleRepo: singleRepoTest
+  // }
 
   componentDidMount(){
+    window.scrollTo(0, 0);
       this.getSingleRepo()
+  }
+
+  componentDidUpdate(prevProps) {  
+    if (
+      this.props.location.pathname !== prevProps.location.pathname
+    ) {
+      window.scrollTo(0, 0);
+      this.getSingleRepo()
+    }
   }
 
   getSingleRepo = async () => {
@@ -23,30 +56,17 @@ class RepoPage extends React.Component {
    }
 
   render(){   
-    console.log(this.state.singleRepo)
-     const { full_name, description, created_at, updated_at,  svn_url, watchers, forks, subscribers_count } = this.state.singleRepo ? this.state.singleRepo : {}
-     const { login, avatar_url } = this.state.singleRepo ? this.state.singleRepo.owner : {}
     return (
         <div>
-
-   { this.state.singleRepo && (
-      <div>
-      <h1>{ full_name }</h1>
-      <p className="text">{ description }</p>
-      <p><i className="eye icon" />Watchers: { watchers }</p>
-      <p><i className="code branch icon" />forks: { forks }</p>
-      <p><i className="user icon" />Subscribers: { subscribers_count }</p>
-      <span>Created: { created_at.slice(0, 10) }</span>
-      <span>Updated: { updated_at.slice(0, 10) }</span>
-      <a href={svn_url} target="_blank">Link</a>
-     
-      </div>
-      ) }
-    
+          <RepoDetails singleRepo={this.state.singleRepo} />
+           <div style={{ marginTop: '80px' }}>
+              {this.props.repos.length > 0  &&
+               <Slider repos={this.props.repos}/>
+             }  
+           </div>
        </div>
       )
-  }
+ }
 }
 
 export default RepoPage
-

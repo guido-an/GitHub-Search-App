@@ -45,21 +45,22 @@ class App extends React.Component {
       <section>
         <div className='ui container' style={{ minHeight: '100vh' }}>
           <Link to="/"><img src={logo} style={{ width: '90px', display: 'block', margin: '10px auto' }} alt="github-logo" /></Link>
-        <Switch>
-           <Route exact path="/" render={props => 
-                <Home
-                  {...props}
-                  getSearchTerm={this.getSearchTerm}
-                  repos={this.state.repos}
-                  apiTimeResponse={this.state.apiTimeResponse}
-                  handleCheckBox={this.handleCheckBox}
+            <Switch>
+               <Route exact path="/" render={props => 
+                    <Home
+                      {...props}
+                      getSearchTerm={this.getSearchTerm}
+                      repos={this.state.repos}
+                      apiTimeResponse={this.state.apiTimeResponse}
+                      handleCheckBox={this.handleCheckBox}
+                    />}
                 />
-              }
-            />
-            <Route exact path="/repos/:owner/:repo" render={props => <RepoPage {...props} repos={this.state.repos} />} />
-
-          {/* <Route exact path="/repo/:id" render={props => <RepoPage {...props} repos={this.state.repos} />} /> */}
-        </Switch>
+                <Route exact path="/repos/:owner/:repo" render={props => 
+                     <RepoPage {...props} 
+                     repos={this.state.repos} 
+                     />} 
+                />
+            </Switch>
         </div>
        <Footer/>
       </section>

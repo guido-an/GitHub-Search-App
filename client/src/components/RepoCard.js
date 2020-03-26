@@ -9,6 +9,7 @@ const { linkText } = setLanguage(translations)
 const excerpLength = 55
 
 const RepoCard = ({ repo }) => {
+  
   const description = repo.description ? repo.description.substring(0, excerpLength) : ''
 
   return (
