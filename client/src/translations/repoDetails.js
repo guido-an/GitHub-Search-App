@@ -2,19 +2,19 @@ export const translations = [
   {
     lang: 'en',
     strings: {
-      text: 'Order by number of watchers'
+      author: 'Author'
     }
   },
   {
     lang: 'nl',
     strings: {
-      text: 'Sorteer op aantal kijkers'
+      author: 'Auteur'
     }
   },
   {
     lang: 'ita',
     strings: {
-      text: 'Ordina per numbero di osservatori'
+      author: 'Autore'
     }
   }
 ]

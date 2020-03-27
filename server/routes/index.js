@@ -9,6 +9,7 @@ router.get('/search/repositories', (req, res) => {
   axios
     .get('https://api.github.com/search/repositories?q=' + req.query.q)
     .then(response => {
+      console.log('response', response)
       res.status(200).json({ repositories: response.data.items })
     })
     .catch(err => {

@@ -1,27 +1,12 @@
 import './RepoPage.css'
 import React from 'react'
-import axios from 'axios'
+import github from '../api/github'
+
 import RepoDetails from '../components/RepoDetails'
 import Slider from '../components/Slider'
 
+
 // import { singleRepoTest } from '../test'
-
-
-
-const hideOnMobile = {
-  display: 'none'
-}
-
-const sliderStyle = function() {
-  if (window.innerWidth < 800) {
-    alert('yes')
-    return hideOnMobile;
-  } else {
-    alert('no')
-  }
-};
-
-
 class RepoPage extends React.Component {
   state = {
     singleRepo: null
@@ -47,8 +32,8 @@ class RepoPage extends React.Component {
   getSingleRepo = async () => {
     const { owner, repo } = this.props.match.params
     try{
-     const myRepo =  await axios.get(`/repos/${owner}/${repo}`)
-     this.setState({ singleRepo: myRepo.data })
+     const response =  await github.get(`/repos/${owner}/${repo}`)
+     this.setState({ singleRepo: response.data.repo })
     }
     catch(err) {
       console.log(err)
