@@ -30,7 +30,7 @@ const Slider = ({ repos }) => {
       >
         {reposList}
       </Whirligig>
-      <style jsx>{`
+      <style jsx="true">{`
              @media(max-width: 968px){
                 .slider{
                   display: none
