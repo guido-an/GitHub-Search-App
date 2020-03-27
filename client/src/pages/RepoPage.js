@@ -32,7 +32,7 @@ class RepoPage extends React.Component {
   getSingleRepo = async () => {
     const { owner, repo } = this.props.match.params
     try{
-     const response =  await github.get(`/repos/${owner}/${repo}`)
+     const response =  await github.get(`/api/repos/${owner}/${repo}`)
      console.log(response.data.repo, 'response')
      this.setState({ singleRepo: response.data.repo })
     }

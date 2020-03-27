@@ -28,7 +28,7 @@ router.get('/search/repositories', (req, res) => {
 //     })
 // })
 
-router.get('/repos/:owner/:repo', (req, res) => {
+router.get('/api/repos/:owner/:repo', (req, res) => {
   const { owner, repo } = req.params
   axios
     .get(`https://api.github.com/repos/${owner}/${repo}`)
