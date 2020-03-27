@@ -9,24 +9,12 @@ router.get('/search/repositories', (req, res) => {
   axios
     .get('https://api.github.com/search/repositories?q=' + req.query.q)
     .then(response => {
-      console.log('response', response)
       res.status(200).json({ repositories: response.data.items })
     })
     .catch(err => {
       res.send(err)
     })
 })
-
-// router.get('/repos/:owner/:repo', (req, res) => {
-//   axios
-//     .get('https://api.github.com/repos/')
-//     .then(response => {
-//       res.status(200).json({ repo: response.data })
-//     })
-//     .catch(err => {
-//       res.send(err)
-//     })
-// })
 
 router.get('/api/repos/:owner/:repo', (req, res) => {
   const { owner, repo } = req.params
