@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const axios = require('axios')
 
-router.get('/search/repositories', (req, res) => {
+router.get('/api/search/repositories', (req, res) => {
   if (!req.query.q) {
     return
   }
