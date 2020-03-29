@@ -20,14 +20,14 @@ REACT_APP_API_URL=http://localhost:5000/
 A minimal Node/Express server in order to solve the CORS error and to already have an extra layer for hipotetically future data caching.
 
 ### Lazy load 
-Both the Home and the RepoPage are mounted using React.lazy().
+Both the Home and the <em>RepoPage</em> are mounted using React.lazy().
 A small spinner will appear before these components will properly be displayed on the page. 
 
 ### API response 
-By using the browser navigator properties the user can see in the SearchBar what is the response time of each API call. 
+By using the browser navigator properties the user can see in the <em>SearchBar</em> what is the response time of each API call. 
 
 ### Watchers 
-Once the user make the first search and the repos appear on the page he can decide to order them based on the repo's number of watchers. That's the reason of the reposCopy array on the state. 
+Once the user make the first search and the repos appear on the page he can decide to order them based on the repo's number of watchers. That's the reason of the <em>reposCopy</em> array on the state. 
 
 ### RepoPage
 Here the user can check the details of a specific repo. At the bottom of the page there is a slider containing all the relative repos in the state. By clicking in one of them the page will scroll to the top and new data will be loaded. 
