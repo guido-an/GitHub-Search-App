@@ -37,3 +37,5 @@ By detecting the browser language the UI is translated in: English, Dutch and It
 
 ### User experience
 The app is responsive and the style wants to be clean and elegant. The use of shadows and the little changes on hover add a touch of aliviness. 
+
+Deployed on the free version of Heroku: https://github-api-search-app.herokuapp.com/
