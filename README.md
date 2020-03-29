@@ -3,7 +3,7 @@ https://github-api-search-app.herokuapp.com/
 
 A mini app for searching among the vast world of GitHub repositories. 
 <br>
-On the main page we have a search input where the user can type in a repository name. The results are loaded when the user is done typing, by clicking in one of them the user will see the details about that specific repo. 
+On the main page we have a search input where the user can type in a repository name. The results are loaded when the user is done typing. By clicking in one of them the user will see the details about that specific repo. 
 
 ### Prerequisites
 <strong>server</strong><br>
