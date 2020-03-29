@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Whirligig from 'react-whirligig'
 import RepoCard from './RepoCard'
 
@@ -12,24 +12,26 @@ const Slider = ({ repos }) => {
   })
 
   return (
-    <div className='slider'>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button onClick={prev} className='ui left labeled icon button'>
+    <section>
+      <div className='slider'>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button onClick={prev} className='ui left labeled icon button'>
            Prev
-          <i className='left arrow icon' />
-        </button>
-        <button onClick={next} className='ui right labeled icon button'>
-          <i className='right arrow icon' />
+            <i className='left arrow icon' />
+          </button>
+          <button onClick={next} className='ui right labeled icon button'>
+            <i className='right arrow icon' />
           Next
-        </button>
+          </button>
+        </div>
+        <Whirligig
+          visibleSlides={3}
+          gutter='1em'
+          ref={(_whirligigInstance) => { whirligig = _whirligigInstance }}
+        >
+          {reposList}
+        </Whirligig>
       </div>
-      <Whirligig
-        visibleSlides={3}
-        gutter='1em'
-        ref={(_whirligigInstance) => { whirligig = _whirligigInstance }}
-      >
-        {reposList}
-      </Whirligig>
       <style jsx='true'>{`
              @media(max-width: 968px){
                 .slider{
@@ -38,7 +40,7 @@ const Slider = ({ repos }) => {
              }
       `}
       </style>
-    </div>
+    </section>
   )
 }
 

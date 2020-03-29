@@ -12,9 +12,8 @@ const Home = ({ repos, getSearchTerm, apiTimeResponse, handleCheckBox }) => {
     <div>
       <SearchBar getSearchTerm={getSearchTerm} apiTimeResponse={apiTimeResponse} />
       <SelectInput handleCheckBox={handleCheckBox} repos={repos} />
-      { repos.length > 0 ? <ReposList repos={repos} /> : 
-      <h1 style={{ marginTop: '40px', textAlign: 'center' }}>{ welcome1 } <span style={{ color: '#2078C2' }}>{ spanText }</span> { welcome2 }</h1> 
-      }
+      {repos && repos.length > 0 ? <ReposList repos={repos} />
+        : <h1 style={{ marginTop: '40px', textAlign: 'center' }}>{welcome1} <span style={{ color: '#2078C2' }}>{spanText}</span> {welcome2}</h1>}
     </div>
   )
 }

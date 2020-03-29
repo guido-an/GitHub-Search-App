@@ -1,13 +1,16 @@
 import './App.css'
-import React from 'react'
+import React, { Component, Suspense } from 'react'
 import { Route, Switch, Link } from 'react-router-dom'
 import github from './api/github'
 import logo from './github-logo.svg'
 import Footer from './components/Footer'
-import Home from './pages/Home'
-import RepoPage from './pages/RepoPage'
+import Spinner from './components/Spinner'
+const Home = React.lazy(() => import('./pages/Home'));
+const RepoPage = React.lazy(() => import('./pages/RepoPage'));
 
-class App extends React.Component {
+
+
+class App extends Component {
   state = {
     repos: [],
     reposCopy: [],
@@ -16,7 +19,7 @@ class App extends React.Component {
 
   getSearchTerm = async term => {
     try {
-      const res = await github.get(`/search/repositories?q=${term}`)
+      const res = await github.get(`/api/search/repositories?q=${term}`)
       
       this.getApiTimeResponse()
     
@@ -46,6 +49,7 @@ class App extends React.Component {
         <div className='ui container' style={{ minHeight: '100vh' }}>
           <Link to="/"><img src={logo} style={{ width: '90px', display: 'block', margin: '10px auto' }} alt="github-logo" /></Link>
             <Switch>
+            <Suspense fallback={<Spinner/>}>
                <Route exact path="/" render={props => 
                     <Home
                       {...props}
@@ -58,8 +62,9 @@ class App extends React.Component {
                 <Route exact path="/repos/:owner/:repo" render={props => 
                      <RepoPage {...props} 
                      repos={this.state.repos} 
-                     />} 
+                     />}  
                 />
+                </Suspense>
             </Switch>
         </div>
        <Footer/>

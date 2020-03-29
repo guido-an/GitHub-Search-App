@@ -1,7 +1,10 @@
-@media (min-width: 768px) {
+@media (min-width: 968px) {
     .repos-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+    .repo-container {
+        width: 33%
     }
 }

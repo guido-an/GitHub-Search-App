@@ -30,7 +30,7 @@
 
 @media (min-width: 1200px) {
     .repo-card {
-        margin: 10px 0;
+        margin: 3px;
         display: flex;
         flex-direction: column;
     }

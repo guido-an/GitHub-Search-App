@@ -2,19 +2,19 @@ export const translations = [
   {
     lang: 'en',
     strings: {
-      linkText: 'View details'
+      textLink: 'Make a new search'
     }
   },
   {
     lang: 'nl',
     strings: {
-      linkText: 'Bekijk details'
+      textLink: 'Maak een nieuwe zoekopdracht'
     }
   },
   {
     lang: 'ita',
     strings: {
-      linkText: 'Scopri di più'
+      textLink: 'Fai una nuova ricerca'
     }
   }
 ]

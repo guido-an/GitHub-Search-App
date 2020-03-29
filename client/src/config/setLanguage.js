@@ -1,4 +1,5 @@
-export function setLanguage(array) {
-  const lang = array.filter(elem => elem.lang.includes(navigator.language) )
-  return lang[0].strings
+export function setLanguage (array) {
+  const browserLang = array.filter(elem => elem.lang.includes(navigator.language))
+  const myLang = browserLang[0] ? browserLang[0].strings : array[0].strings
+  return myLang
 }
