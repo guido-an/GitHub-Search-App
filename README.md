@@ -34,7 +34,7 @@ Once the user make the first search and the repos appear on the page he can deci
 Here the user can check the details of a specific repo. At the bottom of the page there is a slider containing all the relative repos in the state. By clicking in one of them the page will scroll to the top and new data will be loaded. 
 
 ### User experience
-The app is responsive and the style wants to be clean and elegant. A touch of aliviness is given by the use of shadows and the little changes on hover. 
+The app wants to be easy to use with a clean and elegant style. A touch of aliviness is given by the use of shadows and the little changes on hover. 
 
 ### Translations
 By detecting the browser language the UI is translated in: English, Dutch and Italian. If the current browser language is not one of the three above, English will be the default language. 
