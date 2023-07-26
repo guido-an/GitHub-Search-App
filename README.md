@@ -38,4 +38,3 @@ The app wants to be easy to use with a clean and elegant style. A touch of alivi
 ### Translations
 By detecting the browser language the UI is translated in: English, Dutch and Italian. If the current browser language is not one of the three above, English will be the default language. 
 <br/><br/>
-Deployed on the free version of Heroku: https://github-api-search-app.herokuapp.com/
