@@ -1,5 +1,4 @@
 # GitHub Search App 
-https://github-api-search-app.herokuapp.com/
 <img src="https://user-images.githubusercontent.com/30729360/77848707-fc628600-71c6-11ea-9ce5-d6dac5c3e6b5.png" />
 
 A mini app for searching among the vast world of GitHub repositories. 
